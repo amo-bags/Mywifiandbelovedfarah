@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كل عام وأنتِ بقلبي ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #111827, #881337, #4c0519);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      padding: 20px;
+      position: relative;
+    }
+    
+    /* القلوب المنسابة في الخلفية */
+    .heart-bg {
+      position: absolute;
+      font-size: 20px;
+      color: rgba(244, 63, 94, 0.4);
+      animation: float 6s linear infinite;
+      z-index: 1;
+      user-select: none;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
+    }
+
+    /* البطاقة الرئيسية */
+    .card {
+      position: relative;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 24px;
+      padding: 40px 25px;
+      max-width: 550px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .icon-heart {
+      font-size: 55px;
+      margin-bottom: 15px;
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 15px;
+      color: #fecdd3;
+      text-shadow: 0 2px 10px rgba(244, 63, 94, 0.3);
+    }
+
+    .sub-title {
+      font-size: 18px;
+      color: #fda4af;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .message {
+      font-size: 17px;
+      line-height: 2;
+      color: #f1f5f9;
+      margin-bottom: 30px;
+      text-align: justify;
+      text-align-last: center;
+    }
+
+    .message p {
+      margin-bottom: 15px;
+    }
+
+    /* أزرار وتفاعل */
+    .btn {
+      background: linear-gradient(45deg, #e11d48, #be123c);
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(225, 29, 72, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(225, 29, 72, 0.6);
+    }
+
+    .surprise-box {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      display: none;
+      animation: expand 0.6s ease-out forwards;
+    }
+
+    @keyframes expand {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .surprise-text {
+      font-size: 19px;
+      font-weight: 700;
+      color: #ffe4e6;
+      line-height: 1.8;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="icon-heart">💖</div>
+    <h1>كل عام وأنتِ بألف خير</h1>
+    <div class="sub-title">إلى أميرتي وزوجتي الغالية</div>
+
+    <div class="message">
+      <p>
+        في هذا اليوم المميز، لا أحتفل فقط بيوم ميلادكِ، بل أحتفل باليوم الذي أهداني الله فيه أثمن وأجمل نعمة في حياتي.
+      </p>
+      <p>
+        أنتِ لستِ مجرد زوجة، أنتِ الدفء في كل أيامي، والأنس لروحي، والضوء الذي ينير عالمي. كل عام وأنتِ ضحكتي الدائمة، ورفيقة عمري، وحبيبتي التي لا بديل لها.
+      </p>
+    </div>
+
+    <button class="btn" onclick="showSurprise()">اضغطي هنا لرؤية المفاجأة ✨</button>
+
+    <div id="surprise" class="surprise-box">
+      <div class="surprise-text">
+        🌹 أحبكِ اليوم، وغداً، وإلى الأبد 🌹
+        <br>
+        <span style="font-size: 15px; font-weight: 400; color: #fda4af;">دمتِ لي حباً ينبض به قلبي في كل لحظة.</span>
+      </div>
+    </div>
+
+    <footer>صُنع بحب من أجلكِ ❤️</footer>
+  </div>
+
+  <script>
+    // إنشاء قلوب متطايرة بالخلفية
+    function createHearts() {
+      const container = document.body;
+      for (let i = 0; i < 25; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart-bg');
+        heart.innerHTML = ['❤️', '💖', '🌸', '✨', '💕'][Math.floor(Math.random() * 5)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        heart.style.animationDelay = (Math.random() * 5) + 's';
+        container.appendChild(heart);
+      }
+    }
+
+    // إظهار المفاجأة عند الضغط
+    function showSurprise() {
+      const box = document.getElementById('surprise');
+      box.style.display = 'block';
+      
+      // إطلاق مؤثرات إضافية عند الضغط
+      for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+          const spark = document.createElement('div');
+          spark.classList.add('heart-bg');
+          spark.innerHTML = '💖';
+          spark.style.left = (Math.random() * 80 + 10) + 'vw';
+          spark.style.animationDuration = '3s';
+          document.body.appendChild(spark);
+        }, i * 100);
+      }
+    }
+
+    createHearts();
+  </script>
+</body>
+</html>
