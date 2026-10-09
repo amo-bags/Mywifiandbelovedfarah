@@ -16,7 +16,8 @@
     body {
       font-family: 'Tajawal', sans-serif;
       min-height: 100vh;
-      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      /* خلفية سماء ليلية عميقة وأنيقة */
+      background: linear-gradient(to bottom, #020005, #0b091a, #1a102f);
       color: #fff;
       overflow: hidden;
       position: relative;
@@ -37,19 +38,19 @@
       background-color: #fff;
       border-radius: 50%;
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       animation: twinkle linear infinite;
     }
 
     .star:hover {
-      transform: scale(2);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+      transform: scale(2.2);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 1);
     }
 
     @keyframes twinkle {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
     }
 
     /* النجوم الخاصة */
@@ -62,48 +63,50 @@
     }
 
     .letter-star {
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
       background-color: #ffd700;
-      box-shadow: 0 0 30px #ffd700, 0 0 50px #ffd700;
+      box-shadow: 0 0 30px #ffd700, 0 0 60px #ffd700;
       top: 30%;
-      left: 40%;
+      left: 35%;
     }
 
-    .song-star {
-      width: 15px;
-      height: 15px;
-      background-color: #00e5ff;
-      box-shadow: 0 0 30px #00e5ff, 0 0 50px #00e5ff;
-      top: 45%;
+    .poem-star {
+      width: 18px;
+      height: 18px;
+      background-color: #ff758c;
+      box-shadow: 0 0 30px #ff758c, 0 0 60px #ff758c;
+      top: 50%;
       left: 65%;
     }
 
     @keyframes pulseStar {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.3); }
+      50% { transform: scale(1.35); }
     }
 
     /* تلميحات النجوم الخاصة */
     .star-label {
       position: absolute;
-      color: rgba(255,255,255,0.7);
-      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 15px;
+      font-weight: 500;
       pointer-events: none;
-      transform: translateY(25px) translateX(-50%);
+      transform: translateY(28px) translateX(-50%);
       white-space: nowrap;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
-    /* النافذة المنبثقة (Modal) بتصميم Glassmorphism */
+    /* النافذة المنبثقة (Modal) بتصميم محسن للقراءة المريحة */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: rgba(5, 3, 10, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -119,13 +122,13 @@
     }
 
     .modal-content {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-      border-radius: 20px;
-      padding: 40px;
+      background: rgba(30, 20, 50, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.05);
+      border-radius: 24px;
+      padding: 45px 30px;
       width: 90%;
-      max-width: 500px;
+      max-width: 520px;
       text-align: center;
       transform: translateY(30px) scale(0.95);
       transition: transform 0.4s ease;
@@ -140,8 +143,8 @@
       position: absolute;
       top: 15px;
       right: 20px;
-      font-size: 24px;
-      color: #9ca3af;
+      font-size: 26px;
+      color: #cbd5e1;
       cursor: pointer;
       background: none;
       border: none;
@@ -153,48 +156,52 @@
     }
 
     .modal-icon {
-      font-size: 40px;
+      font-size: 42px;
       margin-bottom: 15px;
       animation: float 3s ease-in-out infinite;
     }
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-8px); }
     }
 
     .modal-title {
       font-size: 24px;
       font-weight: 900;
-      margin-bottom: 15px;
-      color: #fecdd3;
+      margin-bottom: 20px;
+      color: #ffb6c1;
     }
 
+    /* تحسين تجربة القراءة: خط مريح، مسافات واسعة، ووضوح تام */
     .modal-text {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #e2e8f0;
+      font-size: 19px;
+      line-height: 2.1;
+      color: #f8fafc;
       font-weight: 300;
+      text-align: center;
+      max-height: 60vh;
+      overflow-y: auto;
+      padding: 0 10px;
+    }
+
+    .modal-text::-webkit-scrollbar {
+      width: 6px;
+    }
+    .modal-text::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
     }
 
     .modal-text strong {
       color: #fff;
       font-weight: 700;
     }
-
-    /* مشغل الأغنية */
-    .song-container iframe {
-      width: 100%;
-      height: 150px;
-      border-radius: 12px;
-      margin-top: 15px;
-      border: none;
-    }
   </style>
 </head>
 <body>
 
-  <!-- حاوية السماء -->
+  <!-- حاوية السماء المرصعة بالنجوم -->
   <div id="sky"></div>
 
   <!-- النجمة المخصصة لرسالة الحب -->
@@ -202,9 +209,9 @@
     <div class="star-label">✨ رسالة حب</div>
   </div>
 
-  <!-- النجمة المخصصة للأغنية -->
-  <div class="special-star song-star" onclick="showSong()">
-    <div class="star-label">🎵 أغنيتنا</div>
+  <!-- النجمة المخصصة للشعر -->
+  <div class="special-star poem-star" onclick="showPoem()">
+    <div class="star-label">📜 شعر في الحب</div>
   </div>
 
   <!-- النافذة المنبثقة -->
@@ -218,34 +225,36 @@
   </div>
 
   <script>
-    // العبارات الرومانسية للنجوم العادية
+    // خواطر وعبارات حب عامة ورومانسية للنجوم العادية
     const sweetQuotes = [
-      "أنتِ أجمل تفصيل في تصميم حياتي يا فرح.",
-      "أنا كمهندس أبني الجدران والأساسات، لكنكِ أنتِ من يصنع منها وطناً دافئاً.",
-      "كل عام وأنتِ النور الذي يضيء مساحات أيامي.",
-      "معكِ، كل زاوية فارغة تمتلئ بالحب والتناسق.",
-      "أنتِ المخطط الأجمل الذي لا أحتاج لتعديله أبداً.",
-      "تناسق ألوان الكون كله لا يعادل جمال ضحكتك.",
-      "ابتسامتك هي أجمل ديكور يزين يومي.",
-      "كل نجمة في هذه السماء تحمل لكِ أمنية، وكل أمنية هي أنتِ."
+      "أنتِ النور الذي يملأ أيامي فرحاً وسعادة يا زوجتي الحبيبة.",
+      "وجودكِ بجانبي يجعل كل لحظة في حياتي تشبه الأعياد.",
+      "كل نجمة في هذه السماء تهمس باسمكِ وتخبركِ كم أهواكِ.",
+      "معكِ عرفت معنى السعادة الحقيقية واستوطن الدفء قلبي.",
+      "ابتسامتكِ هي أجمل ما أراه كل يوم، وأنتِ كل مناي في هذه الحياة.",
+      "لا أستطيع تخيل أيامي بدونكِ، فأنتِ الروح التي تسري في عروقي.",
+      "أحبكِ بكل ما تعنيه الكلمة من حب وعشق وأمان.",
+      "أنتِ رفيقة دربي، وملكة قلبي، وكل أماني السعيدة."
     ];
 
-    // رسالة الحب الطويلة (النجمة الذهبية)
+    // رسالة الحب الطويلة والدافئة
     const loveLetter = `
-      إلى حبيبتي وزوجتي الغالية <strong>فرح</strong>،<br><br>
-      في يوم ميلادك، أقف متأملاً أجمل مشروع في حياتي، وهو "نحن". 
-      كمهندس معماري، أستطيع أن أصمم هياكل صلبة ومبانٍ شاهقة، لكنكِ كمهندسة ديكور وفنانة، من يضع فيها الروح، الدفء، ومعنى "البيت".<br><br>
-      أنتِ لستِ فقط شريكة حياتي، بل أنتِ الألوان التي تملأ فراغاتي، والضوء الذي ينساب في كل زوايا عمري. 
-      كل عام وأنتِ ملكة قلبي، وتفاصيل الجمال في كل أيامي.<br><br>
-      <strong>أحبكِ اليوم، وغداً، وإلى الأبد.</strong>
+      إلى زوجتي الغالية وتوأم روحي <strong>فرح</strong>،<br><br>
+      في كل يوم أعيشه معكِ، أتاكد أن اختياركِ كان أجمل وأعظم أقداري. أنتِ لستِ فقط شريكة حياتي، بل أنتِ الأمان الذي ألوذ إليه من تعب الأيام، والراحة التي تنعش روحي.<br><br>
+      أشكر الله دائماً لأنكِ جمعتِ بيني وبينكِ في هذا العالم الواسع. أود أن أعدكِ بأن أبقى الحصن المنيع والسند الداعم لكِ طوال العمر.<br><br>
+      <strong>أحبكِ اليوم، وغداً، وإلى الأبد يا كل حياتي.</strong>
     `;
 
-    // كود الأغنية المحدث بالرابط الجديد
-    const songHTML = `
-      استمعي إلى هذه الأغنية التي تعزف ألحان حبي لكِ:
-      <div class="song-container">
-        <iframe src="https://www.youtube.com/embed/FcIVdQZqKrY?autoplay=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
+    // محتوى الشعر الرومانسي البديل للأغنية
+    const romanticPoem = `
+      يا من ملكتِ القلب واحتللتِ الروحهْ<br>
+      بكِ تهتدي روحي وتزول الجروحهْ<br><br>
+      يا فرحة العمر يا أملي ويا سكني<br>
+      بكِ الحياة تحلو وتطيب لي الفسحةْ<br><br>
+      لو تطلبين العين ما تغللى عليكِ أبداً<br>
+      فأنتِ النبض في صدري وفي كفي الملوحهْ<br><br>
+      دمتِ لي حباً أمد الدهر أقر به<br>
+      يا أجمل نساء الكون ويا أطهر الطروحهْ
     `;
 
     const sky = document.getElementById('sky');
@@ -254,27 +263,25 @@
     const modalText = document.getElementById('modalText');
     const modalIcon = document.getElementById('modalIcon');
 
-    // إنشاء النجوم العشوائية في السماء
+    // إنشاء سماء مرصعة بنجوم كثيفة ومتنوعة
     function createStars() {
-      const starCount = 100;
+      const starCount = 140;
       for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         star.classList.add('star');
         
-        // أحجام وأماكن عشوائية
-        const size = Math.random() * 3 + 1;
+        const size = Math.random() * 2.8 + 0.8;
         star.style.width = size + 'px';
         star.style.height = size + 'px';
         star.style.top = Math.random() * 100 + 'vh';
         star.style.left = Math.random() * 100 + 'vw';
         
-        // سرعة وميض عشوائية
         star.style.animationDuration = (Math.random() * 3 + 1.5) + 's';
+        star.style.animationDelay = (Math.random() * 3) + 's';
         
-        // عند الضغط على نجمة عادية
         star.addEventListener('click', () => {
           const randomQuote = sweetQuotes[Math.floor(Math.random() * sweetQuotes.length)];
-          openModal("✨ نجمة تهمس لكِ", randomQuote, "💫");
+          openModal("✨ همسة حب", randomQuote, "💫");
         });
 
         sky.appendChild(star);
@@ -283,12 +290,12 @@
 
     // عرض رسالة الحب
     function showLetter() {
-      openModal("إلى مهندسة قلبي 🏛️🎨", loveLetter, "💌");
+      openModal("إلى زوجتي الحبيبة فرح 💌", loveLetter, "💖");
     }
 
-    // عرض الأغنية
-    function showSong() {
-      openModal("ألحان حبنا 🎶", songHTML, "🎧");
+    // عرض الشعر
+    function showPoem() {
+      openModal("أبيات شعرية لأجل عيونك 📜", romanticPoem, "✒️");
     }
 
     // فتح النافذة
@@ -302,12 +309,6 @@
     // إغلاق النافذة
     function closeModal() {
       modalOverlay.classList.remove('active');
-      // إيقاف تشغيل الفيديو عند الإغلاق عبر تفريغ المحتوى مؤقتاً
-      if(modalText.innerHTML.includes('iframe')) {
-        const temp = modalText.innerHTML;
-        modalText.innerHTML = '';
-        setTimeout(() => modalText.innerHTML = temp, 100);
-      }
     }
 
     // إغلاق النافذة عند الضغط خارجها
